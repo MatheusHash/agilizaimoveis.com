@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /login
+Disallow: /admin
+Disallow: /uploads
+Disallow: /imovel
+
+Sitemap: https://agilizaimoveis.com/sitemap.xml
