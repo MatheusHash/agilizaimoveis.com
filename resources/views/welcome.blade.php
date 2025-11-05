@@ -534,7 +534,7 @@
     </div>
 
 
-    {{-- 
+    {{--
         Secao de um post - comentado por enquanto
         Para inserir o post, basta acessar a aba de 'Novo Post' no painel de ADM
     --}}
@@ -613,72 +613,6 @@
                                     </svg>
                                 </i>
                                 35 99981-1941
-                            </a>
-                        </span>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="info-left">
-                        <div>
-                            <figure>
-                                <img src="imgs/img08.jpg" alt="">
-                            </figure>
-                            <h3>Juliana Freire - Ju</h3>
-                            <span>CRECI/MG 37343</span>
-                        </div>
-                    </div>
-                    <div class="info-right">
-                        <p>
-                            Corretora na Agiliza Imóveis desde o ano de 2019, Ju é a figura responsável pela realização
-                            de sonhos no que tange a venda de imóveis de alto, médio e baixo padrão, sejam apartamentos,
-                            casas ou até mesmo imóveis comerciais. Ela é um auxílio constante e especializado em todas
-                            as etapas e processos da venda, fazendo com que tudo se torne o mais simples e descomplicado
-                            possível.
-                        </p>
-                        <span>
-                            <a href="https://api.whatsapp.com/send?phone=5535999027678&text=Ol%C3%A1" target="_blank">
-                                <i>
-                                    <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <path
-                                            d="M256.06,0h-.13C114.78,0,0,114.82,0,256c0,56,18.05,107.9,48.74,150.05l-31.9,95.1,98.4-31.46c40.48,26.82,88.77,42.3,140.83,42.3,141.15,0,255.94-114.85,255.94-256S397.22,0,256.06,0Zm148.96,361.5c-6.18,17.44-30.69,31.9-50.24,36.13-13.38,2.85-30.85,5.12-89.66-19.26-75.23-31.17-123.68-107.62-127.46-112.58-3.62-4.96-30.4-40.48-30.4-77.22s18.66-54.62,26.18-62.3c6.18-6.3,16.38-9.18,26.18-9.18,3.17,0,6.02,.16,8.58,.29,7.52,.32,11.3,.77,16.26,12.64,6.18,14.88,21.22,51.62,23.01,55.39,1.82,3.78,3.65,8.9,1.09,13.86-2.4,5.12-4.51,7.39-8.29,11.74s-7.36,7.68-11.14,12.35c-3.46,4.06-7.36,8.42-3.01,15.94,4.35,7.36,19.39,31.9,41.54,51.62,28.58,25.44,51.74,33.57,60.03,37.02,6.18,2.56,13.54,1.95,18.05-2.85,5.73-6.18,12.8-16.42,20-26.5,5.12-7.23,11.58-8.13,18.37-5.57,6.91,2.4,43.49,20.48,51.01,24.22,7.52,3.78,12.48,5.57,14.3,8.74,1.79,3.17,1.79,18.05-4.38,35.52Z" />
-                                    </svg>
-                                </i>
-                                35 99902-7678
-                            </a>
-                        </span>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="info-left">
-                        <div>
-                            <figure>
-                                <img src="imgs/img09.jpg" alt="">
-                            </figure>
-                            <h3>Rozirene Ozelim - Rozi</h3>
-                            <span>CRECI/MG 46787</span>
-                        </div>
-                    </div>
-                    <div class="info-right">
-                        <p>
-                            Rozi é a caçula da equipe em relação a tempo de corretagem, mas não fica para trás quando o
-                            assunto é experiência! É uma profissional extremamente qualificada e fica encarregada da
-                            realização dos sonhos de quem deseja conquistar a sua casa própria. Atendendo a todos os
-                            tipos de públicos e oferecendo imóveis de diversos níveis, Rozi é também o contato direto
-                            com os protocolos de financiamento pelo programa Minha Casa Minha Vida, uma alternativa
-                            facilitadora para famílias que buscam a sua primeira propriedade.
-
-                        </p>
-                        <span>
-                            <a href="https://api.whatsapp.com/send?phone=5535999132621&text=Ol%C3%A1" target="_blank">
-                                <i>
-                                    <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <path
-                                            d="M256.06,0h-.13C114.78,0,0,114.82,0,256c0,56,18.05,107.9,48.74,150.05l-31.9,95.1,98.4-31.46c40.48,26.82,88.77,42.3,140.83,42.3,141.15,0,255.94-114.85,255.94-256S397.22,0,256.06,0Zm148.96,361.5c-6.18,17.44-30.69,31.9-50.24,36.13-13.38,2.85-30.85,5.12-89.66-19.26-75.23-31.17-123.68-107.62-127.46-112.58-3.62-4.96-30.4-40.48-30.4-77.22s18.66-54.62,26.18-62.3c6.18-6.3,16.38-9.18,26.18-9.18,3.17,0,6.02,.16,8.58,.29,7.52,.32,11.3,.77,16.26,12.64,6.18,14.88,21.22,51.62,23.01,55.39,1.82,3.78,3.65,8.9,1.09,13.86-2.4,5.12-4.51,7.39-8.29,11.74s-7.36,7.68-11.14,12.35c-3.46,4.06-7.36,8.42-3.01,15.94,4.35,7.36,19.39,31.9,41.54,51.62,28.58,25.44,51.74,33.57,60.03,37.02,6.18,2.56,13.54,1.95,18.05-2.85,5.73-6.18,12.8-16.42,20-26.5,5.12-7.23,11.58-8.13,18.37-5.57,6.91,2.4,43.49,20.48,51.01,24.22,7.52,3.78,12.48,5.57,14.3,8.74,1.79,3.17,1.79,18.05-4.38,35.52Z" />
-                                    </svg>
-                                </i>
-                                35 99913-2621
                             </a>
                         </span>
                     </div>
