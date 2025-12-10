@@ -2,7 +2,172 @@
 
 <div id="container-page">
 
-    <div id="area-filtro-inicial" style="">
+    <div id="area-filtro-inicial">
+        <div id="container-filtro-inicial">
+            <!-- <h6>A agilidade e segurança que você precisa e merece!</h6> -->
+
+            <!-- Botão para abrir o formulário -->
+            <button id="abrir-formulario" class="btn-abrir-modal">
+                <span>
+                    Buscar por Imóvel
+                </span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        aria-hidden="true" focusable="false">
+                        <title>Pesquisar</title>
+                        <g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="6"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </g>
+                    </svg>
+                </span>
+
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal do formulário -->
+    <div id="modal-filtro" class="modal-filtro">
+        <div class="modal-content-filtro">
+            <span class="fechar-modal">&times;</span>
+            <!-- Seu formulário original aqui -->
+            <form class="modal-form" action="{{ route('imoveis.filtrados.home') }}" method="GET">
+                @csrf
+                <div id="selects-filtro-inicial">
+                    <div class="select-filtro-inicial" id="filtro-transacao">
+
+                        <h5>
+                            Tipo
+                            <i>
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 451.85 257.57">
+                                    <path
+                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
+                                        transform="translate(0 -97.14)" />
+                                </svg>
+                            </i>
+                        </h5>
+
+                        <input name="motivo" type="hidden" id="tipo-transacao">
+
+                        <div class="box-select-filtro">
+                            <div class="slider-filtros" id="slider-filtros-1">
+                                <ul>
+                                    <li><a data-value="2" data-tipo="Comprar">Comprar</a></li>
+                                    <li><a data-value="1" data-tipo="Alugar">Alugar</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="select-filtro-inicial" id="filtro-tipo">
+
+                        <h5>
+                            Imóvel
+                            <i>
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 451.85 257.57">
+                                    <path
+                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
+                                        transform="translate(0 -97.14)" />
+                                </svg>
+                            </i>
+                        </h5>
+
+                        <input name="categoria" type="hidden" id="tipo-imovel">
+
+                        <div class="box-select-filtro">
+                            <div class="slider-filtros" id="slider-filtros-2">
+                                <ul>
+                                    @foreach ($categorias as $categoria)
+                                        <li><a data-value="{{ $categoria->id }}"
+                                                data-tipo="{{ $categoria->nome }}">{{ $categoria->nome }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="select-filtro-inicial" id="filtro-cidade">
+
+                        <h5>
+                            Cidades
+                            <i>
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 451.85 257.57">
+                                    <path
+                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
+                                        transform="translate(0 -97.14)" />
+                                </svg>
+                            </i>
+                        </h5>
+
+                        <input name="cidade" type="hidden" id="tipo-cidade">
+
+                        <div class="box-select-filtro">
+                            <div class="slider-filtros" id="slider-filtros-3">
+                                <ul id="lista-cidades">
+                                    @foreach ($cidades as $cidade)
+                                        <li class="cidade-item"><a data-value="{{ $cidade->id }}"
+                                                data-tipo="{{ $cidade->nome }}" data-name="cidade">{{ $cidade->nome }}</a>
+                                        </li>
+                                    @endforeach
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div data-name="lista-bairros" class="select-filtro-inicial" id="filtro-bairro">
+
+                        <h5 id="listaDeBairros">
+                            Selecione uma cidade
+                            <i>
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 451.85 257.57">
+                                    <path
+                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
+                                        transform="translate(0 -97.14)" />
+                                </svg>
+                            </i>
+                        </h5>
+
+                        <input name="bairro" type="hidden" id="tipo-bairro">
+
+                        <div class="box-select-filtro">
+                            <div class="slider-filtros" id="slider-filtros-4">
+                                <ul id="bairros">
+
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div id="grupo-filtro-inicial">
+                    <input class="valor moneyMask modal-money" placeholder="R$ - min " type="text" id="preco_min"
+                        name="preco_min">
+                    <input class="valor moneyMask modal-money" placeholder="R$ - max " type="text" id="preco_max"
+                        name="preco_max">
+                    <input name="codigo" type="text" id="codigo" name="codigo" class="modal-text"
+                        placeholder="Buscar por código">
+                </div>
+                @error('codigo')
+                    <span class="text-warning">Escolha pelo menos um campo</span>
+                @enderror
+                <input type="submit" value="Buscar" class="modal-submit">
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <div id="area-filtro-inicial" style="">
 
         <div id="container-filtro-inicial">
 
@@ -235,8 +400,48 @@
 
         </div>
 
-    </div>
+    </div> -->
 
+    @isset($empreendimentos)
+        <!-- ===== Seção: Empreendimentos em Destaque ===== -->
+        <div id="empreendimentos-destaque">
+            <div class="container">
+                <div class="empreendimentos-header">
+                    <h5>Empreendimentos em Destaque</h5>
+
+                    <div id="empreControls" class="empreendimentos-controls">
+                        <button class="empre-prev" aria-label="Anterior">
+                            <svg width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M15 18l-6-6 6-6" stroke="#f95c02" stroke-width="2" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+
+                        <button class="empre-next" aria-label="Próximo">
+                            <svg width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M9 6l6 6-6 6" stroke="#f95c02" stroke-width="2" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="empre-scroll" id="empreScroll">
+                    @foreach ($empreendimentos as $emp)
+                        <article class="empre-card">
+                            <figure>
+                                <img src="{{ asset($emp->imagem_capa_path) }}" alt="Empreendimento 1">
+                            </figure>
+                            <div class="empre-info">
+                                <h4>{{ $emp->titulo }}</h4>
+                                <p>{{ $emp->descricao }}</p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endisset
     <div id="quem-somos">
         <div class="container">
 
@@ -276,11 +481,11 @@
                     </div>
 
                     <script>
-                        $(document).ready(function() {
+                        $(document).ready(function () {
 
                             let click_texto = 0;
 
-                            $('#bt-leia-mais').find('a').click(function() {
+                            $('#bt-leia-mais').find('a').click(function () {
                                 if (click_texto === 0) {
                                     $('#texto-quem-somos').css({
                                         height: $('#texto-quem-somos').find('p').height()
@@ -374,8 +579,7 @@
                         <li>
                             <span>
                                 <figure>
-                                    <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512.01 443.73">
+                                    <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.01 443.73">
                                         <path
                                             d="M510.03,105.47L424.69,3.07c-1.62-1.94-4.02-3.06-6.55-3.06H93.87c-2.53,0-4.93,1.12-6.55,3.06L1.98,105.47c-2.12,2.54-2.59,6.08-1.18,9.08s4.42,4.91,7.73,4.91H503.47c3.31,0,6.32-1.92,7.73-4.91,1.4-2.99,.95-6.53-1.18-9.08Zm-483.27-3.07L97.87,17.07H414.14l71.11,85.33H26.76Z" />
                                         <path
@@ -535,39 +739,39 @@
 
 
     {{--
-        Secao de um post - comentado por enquanto
-        Para inserir o post, basta acessar a aba de 'Novo Post' no painel de ADM
+    Secao de um post - comentado por enquanto
+    Para inserir o post, basta acessar a aba de 'Novo Post' no painel de ADM
     --}}
     {{-- @if ($publicacao)
-        <div id="publicacao">
-            <div class="container">
+    <div id="publicacao">
+        <div class="container">
 
-                <div id="container-publicacao">
+            <div id="container-publicacao">
 
-                    <div id="area-texto-publicacao">
+                <div id="area-texto-publicacao">
 
-                        <h5>{{ $publicacao->title }}</h5>
+                    <h5>{{ $publicacao->title }}</h5>
 
-                        <div id="texto-publicacao">
-                            <p>
-                                {!! $publicacao->content !!}
-                            </p>
-                        </div>
-
-                        <div id="bt-leia-mais">
-                            <a href="{{ $publicacao->linkPost }}" target="__blank">Leia mais</a>
-                        </div>
-
+                    <div id="texto-publicacao">
+                        <p>
+                            {!! $publicacao->content !!}
+                        </p>
                     </div>
 
-                    <figure>
-                        <img src="{{ asset('imgs/post/AGILIZAIMOVEIS_POST.jpg') }}" alt="">
-                    </figure>
+                    <div id="bt-leia-mais">
+                        <a href="{{ $publicacao->linkPost }}" target="__blank">Leia mais</a>
+                    </div>
 
                 </div>
 
+                <figure>
+                    <img src="{{ asset('imgs/post/AGILIZAIMOVEIS_POST.jpg') }}" alt="">
+                </figure>
+
             </div>
+
         </div>
+    </div>
     @endif --}}
     <div id="equipe">
         <div class="container">
@@ -750,12 +954,202 @@
 <script type="text/javascript" src="{{ asset('js/bairros.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/archives/jquery.mask.min.js') }}"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.moneyMask').mask('#.##0,00', {
             reverse: true
         })
     })
 </script>
-{{-- <script type="text/javascript" src="{{asset('js/archives/axios.js')}}"></script> --}}
+{{--
+<script type="text/javascript" src="{{asset('js/archives/axios.js')}}"></script> --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const empreendimentos = @json($empreendimentos);
+        const controls = document.getElementById("empreControls");
+        const containerEmpreendimentos = document.getElementById("empreendimentos-destaque");
+        if (empreendimentos.length < 1) { containerEmpreendimentos.style.display = "none"; }
+        function toggleEmpreButtons() {
+            const total = empreendimentos.length;
+            const isMobile = window.innerWidth < 768;
+            if (isMobile && total > 1) {
+                controls.style.display = "flex";
+                return;
+            }
+            if (!isMobile && total > 3) {
+                controls.style.display = "flex";
+                return;
+            }
+            controls.style.display = "none";
+        }
+
+        toggleEmpreButtons();
+        window.addEventListener("resize", toggleEmpreButtons);
+
+        // ----- Slider de fundo -----
+        const imagens = @json($sliderImagesPathName);
+        if (imagens.length >= 1) {
+            const preload = [];
+            imagens.forEach(path => {
+                const img = new Image();
+                img.src = path;
+                preload.push(img);
+            });
+
+            let indice = 0;
+            const area = document.getElementById("area-filtro-inicial");
+            area.style.backgroundImage = `url('${imagens[0]}')`;
+
+
+            function trocarImagem() {
+                indice = (indice + 1) % imagens.length;
+                area.style.backgroundImage = `url('${imagens[indice]}')`;
+            }
+
+            setInterval(trocarImagem, 5000); // muda a cada 5 segundos
+        }
+
+        // ----- Modal -----
+        const modal = document.getElementById("modal-filtro");
+        const btnAbrir = document.getElementById("abrir-formulario");
+        const fechar = document.querySelector(".fechar-modal");
+
+        btnAbrir.addEventListener("click", () => {
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+
+        fechar.addEventListener("click", () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+
+        // Fecha o modal clicando fora do conteúdo
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        'use strict';
+
+        $(".select-filtro-inicial").each(function (index, select) {
+
+            let inputValue = $(this);
+
+            $(select).find(" h5 ").click(function () {
+
+                $(this).parent().toggleClass('show');
+                // console.log('test:  ' + $(this).parent().text());
+            });
+
+            $(select).find("#listaDeBairros").click(function () {
+                // if( $(this).data('name') == 'lista-bairros' ){
+                console.log($(this).text())
+                $("#bairros li a").on('click', function () {
+
+                    $('.slider-filtros ul li a').removeClass('ativo');
+
+                    inputValue.find('h5').html($(this).data('tipo') +
+                        '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
+                    )
+
+                    inputValue.find("input[type='hidden']").val($(this).data('value'));
+
+                    inputValue.removeClass('show');
+
+                });
+                // }
+            })
+
+            $(select).find(" a ").click(function () {
+
+                console.log('a:  ' + $(this).text());
+
+                $('.slider-filtros ul li a').removeClass('ativo');
+
+                inputValue.find('h5').html($(this).data('tipo') +
+                    '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
+                )
+
+                inputValue.find("input[type='hidden']").val($(this).data('value'));
+
+                inputValue.removeClass('show');
+
+                // console.log(inputValue.find("input[type='hidden']").val());
+
+            });
+
+        });
+
+        $(window).scroll(function () {
+
+            $(".select-filtro-inicial").removeClass('show');
+
+        });
+
+        //if(window.innerWidth > 768){
+
+        $(document).on('click', function (e) {
+
+            if (!$(e.target).closest('#filtro-transacao').length) {
+                $('#filtro-transacao').removeClass('show');
+            }
+
+            if (!$(e.target).closest('#filtro-tipo').length) {
+                $('#filtro-tipo').removeClass('show');
+            }
+
+            if (!$(e.target).closest('#filtro-cidade').length) {
+                $('#filtro-cidade').removeClass('show');
+
+            }
+
+            if (!$(e.target).closest('#filtro-bairro').length) {
+                $('#filtro-bairro').removeClass('show');
+
+            }
+
+        });
+        //}
+
+    });
+</script>
+<script>
+    (function () {
+        // Controles do carrossel de empreendimentos
+        const container = document.getElementById('empreScroll');
+        const btnPrev = document.querySelector('.empre-prev');
+        const btnNext = document.querySelector('.empre-next');
+
+        if (container && btnPrev && btnNext) {
+            // scroll amount: largura do container (mostra ~3 cards) / 1 => ajusta ao clicar
+            function getScrollAmount() {
+                // tenta usar largura de 3 cards visíveis
+                return Math.floor(container.clientWidth * 0.9);
+            }
+
+            btnNext.addEventListener('click', function () {
+                container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+
+            btnPrev.addEventListener('click', function () {
+                container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+
+            // Habilita cliques em touch para seguir snap ao terminar
+            container.addEventListener('scroll', function () {
+                // optional: you could update controls state here
+            });
+        }
+    })();
+</script>
 
 @include('template.bottom')

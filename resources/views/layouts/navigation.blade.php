@@ -36,11 +36,11 @@
 
                     </x-nav-link>
 
-                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+                    <!-- <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
 
                         {{ __('Novo Post') }}
 
-                    </x-nav-link>
+                    </x-nav-link> -->
 
                     <x-nav-link :href="route('imoveis.store.form')" :active="request()->routeIs('imoveis.store.form')">
 
@@ -75,6 +75,11 @@
                     <x-nav-link :href="route('municipios.index')" :active="request()->routeIs('municipios.index')">
 
                         {{ __('Municipios e Bairros') }}
+
+                    </x-nav-link>
+                    <x-nav-link :href="route('homepage.page')" :active="request()->routeIs('homepage.page')">
+
+                        {{ __('Página inicial') }}
 
                     </x-nav-link>
 

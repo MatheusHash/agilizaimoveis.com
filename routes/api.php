@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\HomepageSliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/contato/adicionar', [\App\Http\Controllers\ContatoController::class, 'store'])->name('contato.enviar');
 
 
-        /*
-         * Rotas com controllers */
-        Route::prefix('municipios')->group(function(){
-            // Rotas para listar e Adicionar Municipios no BD
-            Route::get('/{cod_municipio}/bairros', [App\Http\Controllers\admin\BairroController::class, 'bairrosDoMunicipio'])->name('municipio.bairros');
+/*
+ * Rotas com controllers */
+Route::prefix('municipios')->group(function () {
+    // Rotas para listar e Adicionar Municipios no BD
+    Route::get('/{cod_municipio}/bairros', [App\Http\Controllers\admin\BairroController::class, 'bairrosDoMunicipio'])->name('municipio.bairros');
 
-        });
+});
 
 
 
