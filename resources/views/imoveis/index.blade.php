@@ -120,6 +120,39 @@
                     </fieldset>
 
                     <fieldset>
+                        <label>Selecione uma Categoria</label>
+
+                        <div class="select-filtro-inicial" id="filtro-tipo">
+
+                            <h5>
+                                Imóvel
+                                <i>
+                                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 451.85 257.57">
+                                        <path
+                                            d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
+                                            transform="translate(0 -97.14)" />
+                                    </svg>
+                                </i>
+                            </h5>
+
+                            <input name="categoria" type="hidden" id="tipo-imovel">
+
+                            <div class="box-select-filtro">
+                                <div class="slider-filtros" id="slider-filtros-2">
+                                    <ul>
+                                        @foreach ($categorias as $categoria)
+                                            <li><a data-value="{{ $categoria->id }}"
+                                                    data-tipo="{{ $categoria->nome }}">{{ $categoria->nome }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+                    <fieldset>
 
                         <label>Selecione uma Cidade</label>
 
@@ -170,356 +203,138 @@
                                     </ul>
 
                                 </div>
-
                             </div>
-
-
-
                         </div>
-
                     </fieldset>
-
-
-
                     <fieldset>
-
-                        <label>Selecione um bairro</label>
-
+                        <label>Selecione um Bairro</label>
                         <div data-name="lista-bairros" class="select-filtro-inicial" id="filtro-bairro">
-
-
-
                             <h5 id="listaDeBairros">
-
                                 Bairros
-
                                 <i>
-
                                     <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 451.85 257.57">
-
                                         <path
                                             d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
                                             transform="translate(0 -97.14)" />
-
                                     </svg>
-
                                 </i>
-
                             </h5>
-
-
-
                             <input name="bairro" type="hidden" id="tipo-bairro">
 
-
-
                             <div class="box-select-filtro">
-
                                 <div class="slider-filtros" id="slider-filtros-3">
-
                                     <ul id="bairros">
-
-
-
                                         <br>
-
                                     </ul>
-
                                 </div>
-
                             </div>
-
-
-
                         </div>
-
                     </fieldset>
-
-
 
                     <div class="dual-cp">
-
                         <fieldset>
-
                             <label>Preço (min)</label>
-
                             <input class="moneyMask" type="text" id="preco_min" name="preco_min">
-
                         </fieldset>
-
-
-
                         <fieldset>
-
                             <label>Preço (máx)</label>
-
                             <input class="moneyMask" type="text" id="preco_max" name="preco_max">
-
                         </fieldset>
-
                     </div>
-
-
-
                     <fieldset>
-
                         <label>Quartos</label>
-
                         <div class="variacoes">
-
                             <input name="quarto" type="hidden" id="qtd_quarto">
-
                             <a data-value="1">1+</a>
-
                             <a data-value="2">2+</a>
-
                             <a data-value="3">3+</a>
-
                             <a data-value="4">4+</a>
-
                             <a data-value="5">5+</a>
-
                             <a data-value="6">6+</a>
-
                         </div>
-
                     </fieldset>
-
                     <fieldset>
-
                         <label>Banheiros</label>
-
                         <div class="variacoes">
-
                             <input name="banheiro" type="hidden" id="qtd_banheiro">
-
                             <a data-value="1">1+</a>
-
                             <a data-value="2">2+</a>
-
                             <a data-value="3">3+</a>
-
                             <a data-value="4">4+</a>
-
                             <a data-value="5">5+</a>
-
                             <a data-value="6">6+</a>
-
                         </div>
-
                     </fieldset>
-
                     <fieldset>
-
                         <label>Vagas de Garagem</label>
-
                         <div class="variacoes">
-
                             <input name="garagem" type="hidden" id="qtd_garagem">
-
                             <a data-value="1">1+</a>
-
                             <a data-value="2">2+</a>
-
                             <a data-value="3">3+</a>
-
                             <a data-value="4">4+</a>
-
                             <a data-value="5">5+</a>
-
                             <a data-value="6">6+</a>
-
                         </div>
-
                     </fieldset>
-
                     <fieldset>
-
                         <label>Buscar por código</label>
-
                         <input type="text" id="codigo" name="codigo" placeholder="Buscar por código">
-
                     </fieldset>
-
-
-
                     <input type="submit" value="Buscar">
-
                     <script>
-
                         $(document).ready(function () {
-
-
-
                             'use strict';
-
-
-
                             $(".select-filtro-inicial").each(function (index, select) {
-
-
-
                                 var inputValue = $(this);
-
-
-
                                 $(select).find(" h5 ").click(function () {
-
-
-
                                     $(this).parent().toggleClass('show');
-
-
-
                                 });
-
-
-
                                 $(select).find(" a ").click(function () {
-
-
-
                                     $('.slider-filtros ul li a').removeClass('ativo');
-
-
-
                                     $(this).addClass('ativo');
-
                                     inputValue.find('h5').html($(this).data('tipo') +
-
                                         '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
-
                                     )
-
-
-
                                     inputValue.find("input[type='hidden']").val($(this).data('value'));
-
-
-
                                     inputValue.removeClass('show');
-
-
-
                                 });
-
-
-
                                 $(select).find("#listaDeBairros").click(function () {
-
                                     $("#bairros li a").on('click', function () {
-
-
-
                                         $('.slider-filtros ul li a').removeClass('ativo');
-
-
-
                                         inputValue.find('h5').html($(this).data('tipo') +
-
                                             '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
-
                                         )
-
-
-
                                         inputValue.find("input[type='hidden']").val($(this).data('value'));
-
-
-
                                         inputValue.removeClass('show');
-
-
-
                                     });
-
                                 });
-
-
-
                             });
-
-
-
                             $(".variacoes").each(function (index, select) {
-
-
-
                                 var inputValue = $(this);
-
-
-
                                 $(select).find(" a ").click(function () {
-
                                     $(inputValue).find('a').removeClass('ativo');
-
-
-
                                     $(this).addClass('ativo');
-
-
-
                                     inputValue.find("input[type='hidden']").val($(this).data('value'));
-
-
-
                                 });
-
-
-
                             });
-
-
-
                             $(window).scroll(function () {
-
-
-
                                 $(".select-filtro-inicial").removeClass('show');
-
-
-
                             });
-
-
-
-
-
                             $(document).on('click', function (e) {
-
-
-
                                 if (!$(e.target).closest('#filtro-tipo').length) {
-
                                     $('#filtro-tipo').removeClass('show');
-
                                 }
-
                                 if (!$(e.target).closest('#filtro-cidade').length) {
-
                                     $('#filtro-cidade').removeClass('show');
-
                                 }
-
                                 if (!$(e.target).closest('#filtro-bairro').length) {
-
                                     $('#filtro-bairro').removeClass('show');
-
                                 }
-
-
-
                             });
-
-
-
                         });
-
                     </script>
-
-
-
                 </div>
 
 
@@ -855,11 +670,11 @@
 
                                 <!-- <div class="bairro">
 
-                                                <p class="nome">bairro:</p>
+                                                                                                                                                                                                <p class="nome">bairro:</p>
 
-                                                <p></p>
+                                                                                                                                                                                                <p></p>
 
-                                            </div> -->
+                                                                                                                                                                                            </div> -->
 
                             @endif
 

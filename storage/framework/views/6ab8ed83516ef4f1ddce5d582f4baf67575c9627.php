@@ -8,10 +8,6 @@
 
 
 
-
-
-
-
     <meta charset="iso-8859-1">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,7 +34,11 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/main.css')); ?>" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="<?php echo e(asset('css/main.css')); ?>?v=<?php echo e(filemtime(public_path('css/main.css'))); ?>"
+/>
 
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/swiper.min.css')); ?>">
 

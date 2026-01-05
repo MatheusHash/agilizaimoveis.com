@@ -24,10 +24,11 @@ class HomepageSliderController extends Controller
             'image' => 'required|image|max:2048',
             'order' => 'nullable|integer',
         ]);
+        $file = $request->image;
         $path = 'imgs/homepage/slider/';
-        $nameImage = uniqid() . '.' . $request->image->extension();
-        if ($request->has('image') && $request->image->isValid()) {
-            $image = $request->image;
+        if ($request->has('image') && $file->isValid()) {
+            $nameImage = uniqid() . '.' . $file->getClientOriginalExtension();
+            $image = $file;
             $image->move($path, $nameImage);
         }
         $pathname = $path . $nameImage;
@@ -44,15 +45,15 @@ class HomepageSliderController extends Controller
     public function destroy($id)
     {
         $sliderItem = HomepageSlider::findOrFail($id);
-        $filePath = public_path($sliderItem->path);
 
-        if (file_exists($filePath)) {
-            unlink($filePath);
-            $sliderItem->delete();
-            HomepageSlider::reorder();
-            return response()->json(['success' => 'Imagem deletada!'], 200, ['success' => 'Imagem removida com sucesso!']);
+        if (Storage::disk('public')->exists($sliderItem->path)) {
+            Storage::disk('public')->delete($sliderItem->path);
         }
+        $sliderItem->delete();
+        HomepageSlider::reorder();
 
-        return response()->json(['fail' => 'Falha ao deletar imagem!'], 500);
+        return response()->json([
+            'success' => 'Imagem removida com sucesso!'
+        ]);
     }
 }

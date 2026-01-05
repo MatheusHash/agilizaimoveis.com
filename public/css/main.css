@@ -1094,7 +1094,7 @@ a {
 
     padding: 42px 0 5px 0;
 
-    overflow: visible;
+    overflow: hidden;
 
     background: #fff;
 
@@ -7841,7 +7841,6 @@ input[type="submit"] {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     background: #fff;
     max-height: 260px;
-    overflow: auto;
     z-index: 9999;
 }
 
