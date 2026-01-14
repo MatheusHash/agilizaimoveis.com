@@ -523,7 +523,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <figure>
-                    <img src="<?php echo e(asset('imgs/img02.jpg')); ?>" alt="">
+                    <img src="<?php echo e(asset('imgs/faixadaAgilizaImoveis.png')); ?>" alt="">
                 </figure>
 
                 <div id="valores-empresa">

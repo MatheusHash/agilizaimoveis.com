@@ -509,7 +509,7 @@
                 </div>
 
                 <figure>
-                    <img src="{{ asset('imgs/img02.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/faixadaAgilizaImoveis.png') }}" alt="">
                 </figure>
 
                 <div id="valores-empresa">
