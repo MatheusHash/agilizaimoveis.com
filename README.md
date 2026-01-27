@@ -1,64 +1,273 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 📦 Projeto Laravel 8 (Legacy) — Dockerizado
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este repositório contém um **projeto legado em Laravel 8**, configurado para rodar via **Docker**, utilizando **PHP 8.0.x**, banco de dados MySQL e dependências Node.js.
 
-## About Laravel
+Este README foi escrito para que **qualquer pessoa consiga subir, manter e operar o projeto** mesmo sem conhecimento prévio do ambiente.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🧱 Stack do Projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* PHP 8.0.x
+* Laravel 8
+* MySQL
+* Node.js / NPM
+* Docker + Docker Compose
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Subindo o projeto (Primeira vez)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1️⃣ Subir os containers
 
-## Laravel Sponsors
+```bash
+docker compose up -d
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 2️⃣ Acessar o container da aplicação
 
-### Premium Partners
+```bash
+docker compose exec app bash
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 3️⃣ Instalar dependências PHP
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4️⃣ Copiar e configurar variáveis de ambiente
 
-## Code of Conduct
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> ⚠️ Atenção: no Docker, o banco **NÃO é localhost**
 
-## Security Vulnerabilities
+```env
+DB_HOST=db
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5️⃣ Gerar a key do Laravel
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6️⃣ Rodar migrations
+
+```bash
+php artisan migrate
+```
+
+---
+
+## 🟢 Comandos Docker (Essenciais)
+
+### Subir containers
+
+```bash
+docker compose up -d
+```
+
+### Parar containers
+
+```bash
+docker compose down
+```
+
+### Rebuildar containers
+
+```bash
+docker compose up -d --build
+```
+
+### Ver logs
+
+```bash
+docker compose logs -f
+```
+
+### Acessar o container da aplicação
+
+```bash
+docker compose exec app bash
+```
+
+### Executar comandos direto no container
+
+```bash
+docker compose exec app php artisan migrate
+```
+
+---
+
+## 🧩 Comandos Laravel (Artisan)
+
+### Migrations
+
+```bash
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:fresh --seed
+```
+
+### Cache e otimização
+
+```bash
+php artisan config:clear
+php artisan config:cache
+php artisan route:clear
+php artisan route:cache
+php artisan view:clear
+php artisan optimize
+```
+
+### Filas
+
+```bash
+php artisan queue:work
+php artisan queue:restart
+```
+
+---
+
+## 📦 Composer (Dependências PHP)
+
+### Instalar dependências
+
+```bash
+composer install
+```
+
+### Atualizar dependências
+
+```bash
+composer update
+```
+
+### Dump autoload
+
+```bash
+composer dump-autoload
+```
+
+---
+
+## 🎨 Node.js / Frontend
+
+> Usado para assets (Laravel Mix / Vite, dependendo do projeto)
+
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### Build para desenvolvimento
+
+```bash
+npm run dev
+```
+
+### Build para produção
+
+```bash
+npm run build
+```
+
+---
+
+## 🗄️ Banco de Dados
+
+### Acessar MySQL via container
+
+```bash
+docker compose exec db mysql -u root -p
+```
+
+### Conectar via DBeaver
+
+* **Host:** localhost
+* **Port:** 3306
+* **Usuário:** definido no `.env`
+* **Senha:** definida no `.env`
+
+Se ocorrer o erro:
+
+> `Public Key Retrieval is not allowed`
+
+Habilite a opção:
+
+```
+Allow Public Key Retrieval = true
+```
+
+Ou adicione nos parâmetros da conexão:
+
+```
+allowPublicKeyRetrieval=true
+```
+
+---
+
+## 🛠️ Troubleshooting Comum
+
+### ❌ Erro: `No such file or directory`
+
+Causa comum:
+
+* `DB_HOST=localhost`
+
+Solução:
+
+```env
+DB_HOST=db
+```
+
+---
+
+### ❌ Banco não conecta no Docker
+
+Checklist:
+
+* Containers estão rodando?
+* DB_HOST está como `db`?
+* Usuário e senha conferem?
+* Porta correta?
+
+---
+
+## 📂 Estrutura Importante
+
+* `docker-compose.yml` → Orquestra containers
+* `.env` → Variáveis de ambiente
+* `artisan` → CLI do Laravel
+* `package.json` → Dependências Node.js
+* `composer.json` → Dependências PHP
+
+---
+
+## 🧭 Fluxo Padrão de Trabalho
+
+```text
+1. docker compose up -d
+2. docker compose exec app bash
+3. composer install
+4. npm install
+5. php artisan migrate
+6. npm run dev
+```
+
+---
+
+## 🔒 Observações Finais
+
+* Repositório **privado**
+* Projeto legado (Laravel 8)
+* Evite atualizar dependências sem validação
+* Sempre documentar mudanças relevantes
+
+---
+
+📌 **Em caso de dúvidas, consulte este README antes de qualquer alteração.**
