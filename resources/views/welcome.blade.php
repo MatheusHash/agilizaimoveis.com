@@ -123,7 +123,7 @@
                     <div data-name="lista-bairros" class="select-filtro-inicial" id="filtro-bairro">
 
                         <h5 id="listaDeBairros">
-                            Selecione uma cidade
+                            Bairros
                             <i>
                                 <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 451.85 257.57">
@@ -165,243 +165,6 @@
             </form>
         </div>
     </div>
-
-
-    <!-- <div id="area-filtro-inicial" style="">
-
-        <div id="container-filtro-inicial">
-
-
-            <h6>A agilidade e segurança que você precisa e merece!</h6>
-            <form action="{{ route('imoveis.filtrados.home') }}" method="GET">
-                @csrf
-                <div id="selects-filtro-inicial">
-
-                    <div class="select-filtro-inicial" id="filtro-transacao">
-
-                        <h5>
-                            Tipo
-                            <i>
-                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 451.85 257.57">
-                                    <path
-                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
-                                        transform="translate(0 -97.14)" />
-                                </svg>
-                            </i>
-                        </h5>
-
-                        <input name="motivo" type="hidden" id="tipo-transacao">
-
-                        <div class="box-select-filtro">
-                            <div class="slider-filtros" id="slider-filtros-1">
-                                <ul>
-                                    <li><a data-value="2" data-tipo="Comprar">Comprar</a></li>
-                                    <li><a data-value="1" data-tipo="Alugar">Alugar</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="select-filtro-inicial" id="filtro-tipo">
-
-                        <h5>
-                            Imóvel
-                            <i>
-                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 451.85 257.57">
-                                    <path
-                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
-                                        transform="translate(0 -97.14)" />
-                                </svg>
-                            </i>
-                        </h5>
-
-                        <input name="categoria" type="hidden" id="tipo-imovel">
-
-                        <div class="box-select-filtro">
-                            <div class="slider-filtros" id="slider-filtros-2">
-                                <ul>
-                                    @foreach ($categorias as $categoria)
-                                        <li><a data-value="{{ $categoria->id }}"
-                                                data-tipo="{{ $categoria->nome }}">{{ $categoria->nome }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="select-filtro-inicial" id="filtro-cidade">
-
-                        <h5>
-                            Cidades
-                            <i>
-                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 451.85 257.57">
-                                    <path
-                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
-                                        transform="translate(0 -97.14)" />
-                                </svg>
-                            </i>
-                        </h5>
-
-                        <input name="cidade" type="hidden" id="tipo-cidade">
-
-                        <div class="box-select-filtro">
-                            <div class="slider-filtros" id="slider-filtros-3">
-                                <ul id="lista-cidades">
-                                    @foreach ($cidades as $cidade)
-                                        <li class="cidade-item"><a data-value="{{ $cidade->id }}"
-                                                data-tipo="{{ $cidade->nome }}"
-                                                data-name="cidade">{{ $cidade->nome }}</a></li>
-                                    @endforeach
-                                    <br>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div data-name="lista-bairros" class="select-filtro-inicial" id="filtro-bairro">
-
-                        <h5 id="listaDeBairros">
-                            Selecione uma cidade
-                            <i>
-                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 451.85 257.57">
-                                    <path
-                                        d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z"
-                                        transform="translate(0 -97.14)" />
-                                </svg>
-                            </i>
-                        </h5>
-
-                        <input name="bairro" type="hidden" id="tipo-bairro">
-
-                        <div class="box-select-filtro">
-                            <div class="slider-filtros" id="slider-filtros-4">
-                                <ul id="bairros">
-
-                                    <br>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    {{-- <div style="display: flex"> --}}
-                    <input class="valor moneyMask" placeholder="R$ - min " type="text" id="preco_min"
-                        name="preco_min">
-                    <input class="valor moneyMask" placeholder="R$ - max " type="text" id="preco_max"
-                        name="preco_max">
-                    {{-- </div> --}}
-
-                    <input name="codigo" type="text" id="codigo" name="codigo" placeholder="Buscar por código">
-
-
-                    <script>
-                        $(document).ready(function() {
-
-                            'use strict';
-
-                            $(".select-filtro-inicial").each(function(index, select) {
-
-                                let inputValue = $(this);
-
-                                $(select).find(" h5 ").click(function() {
-
-                                    $(this).parent().toggleClass('show');
-                                    // console.log('test:  ' + $(this).parent().text());
-                                });
-
-                                $(select).find("#listaDeBairros").click(function() {
-                                    // if( $(this).data('name') == 'lista-bairros' ){
-                                    console.log($(this).text())
-                                    $("#bairros li a").on('click', function() {
-
-                                        $('.slider-filtros ul li a').removeClass('ativo');
-
-                                        inputValue.find('h5').html($(this).data('tipo') +
-                                            '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
-                                        )
-
-                                        inputValue.find("input[type='hidden']").val($(this).data('value'));
-
-                                        inputValue.removeClass('show');
-
-                                    });
-                                    // }
-                                })
-
-                                $(select).find(" a ").click(function() {
-
-                                    console.log('a:  ' + $(this).text());
-
-                                    $('.slider-filtros ul li a').removeClass('ativo');
-
-                                    inputValue.find('h5').html($(this).data('tipo') +
-                                        '<i><svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451.85 257.57"><path d="M225.92,354.71a31.59,31.59,0,0,1-22.37-9.27L9.27,151.16A31.64,31.64,0,0,1,54,106.41l171.9,171.91L397.83,106.41a31.64,31.64,0,0,1,44.74,44.75L248.29,345.45A31.54,31.54,0,0,1,225.92,354.71Z" transform="translate(0 -97.14)"></path></svg></i>'
-                                    )
-
-                                    inputValue.find("input[type='hidden']").val($(this).data('value'));
-
-                                    inputValue.removeClass('show');
-
-                                    // console.log(inputValue.find("input[type='hidden']").val());
-
-                                });
-
-                            });
-
-                            $(window).scroll(function() {
-
-                                $(".select-filtro-inicial").removeClass('show');
-
-                            });
-
-                            //if(window.innerWidth > 768){
-
-                            $(document).on('click', function(e) {
-
-                                if (!$(e.target).closest('#filtro-transacao').length) {
-                                    $('#filtro-transacao').removeClass('show');
-                                }
-
-                                if (!$(e.target).closest('#filtro-tipo').length) {
-                                    $('#filtro-tipo').removeClass('show');
-                                }
-
-                                if (!$(e.target).closest('#filtro-cidade').length) {
-                                    $('#filtro-cidade').removeClass('show');
-
-                                }
-
-                                if (!$(e.target).closest('#filtro-bairro').length) {
-                                    $('#filtro-bairro').removeClass('show');
-
-                                }
-
-                            });
-                            //}
-
-                        });
-                    </script>
-                    @error('codigo')
-                        <span class="text-warning">Escolha pelo menos um campo</span>
-                    @enderror
-
-                </div>
-                <input type="submit" value="Buscar">
-
-            </form>
-
-        </div>
-
-    </div> -->
-
     @isset($empreendimentos)
         <!-- ===== Seção: Empreendimentos em Destaque ===== -->
         <div id="empreendimentos-destaque">
@@ -660,7 +423,7 @@
                 <li>
                     <div>
                         <figure>
-                            <img src="{{ asset('imgs/minhacasaminhavida.png') }}" alt="Minha casa Minha Vida">
+                            <img src="{{ asset('imgs/img03.jpg') }}" alt="Minha casa Minha Vida">
                         </figure>
                         <h3>Minha Casa Minha Vida</h3>
                     </div>
@@ -951,7 +714,7 @@
 </div>
 
 
-<script type="text/javascript" src="{{ asset('js/bairros.js') }}"></script>
+{{-- <script type="text/javascript" src="{{ asset('/js/archives/bairros.js') }}"></script> --}}
 <script type="text/javascript" src="{{ asset('/js/archives/jquery.mask.min.js') }}"></script>
 <script>
     $(document).ready(function () {
@@ -1052,7 +815,7 @@
 
             $(select).find("#listaDeBairros").click(function () {
                 // if( $(this).data('name') == 'lista-bairros' ){
-                console.log($(this).text())
+                // console.log($(this).text())
                 $("#bairros li a").on('click', function () {
 
                     $('.slider-filtros ul li a').removeClass('ativo');
@@ -1071,7 +834,7 @@
 
             $(select).find(" a ").click(function () {
 
-                console.log('a:  ' + $(this).text());
+                // console.log('a:  ' + $(this).text());
 
                 $('.slider-filtros ul li a').removeClass('ativo');
 

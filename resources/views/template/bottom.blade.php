@@ -120,6 +120,7 @@
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/archives/enviarContato.js') }}"></script>
 <script src="{{ asset('js/archives/arrayToObject.js') }}"></script>
+<script src="{{ asset('js/archives/bairros.js') }}"></script>
 </body>
 
 </html>
