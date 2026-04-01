@@ -24,4 +24,4 @@
         <?php endif; ?>
     </div>
 <?php endif; ?>
-<?php /**PATH /home/coffcoff/Documents/Projects/agilizaimoveis.com/resources/views/shared/pagination.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/resources/views/shared/pagination.blade.php ENDPATH**/ ?>

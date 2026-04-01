@@ -101,4 +101,4 @@
         </div>
     </header>
 
-<?php /**PATH /home/mhash/Documents/Projects/agilizaimoveis.com/resources/views/template/top.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/resources/views/template/top.blade.php ENDPATH**/ ?>

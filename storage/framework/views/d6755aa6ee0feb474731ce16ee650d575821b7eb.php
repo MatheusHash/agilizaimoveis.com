@@ -120,8 +120,7 @@
 <script type="text/javascript" src="<?php echo e(asset('js/app.js')); ?>"></script>
 <script src="<?php echo e(asset('js/archives/enviarContato.js')); ?>"></script>
 <script src="<?php echo e(asset('js/archives/arrayToObject.js')); ?>"></script>
-<script src="<?php echo e(asset('js/archives/bairros.js')); ?>"></script>
 </body>
 
 </html>
-<?php /**PATH /home/coffcoff/Documents/Projects/agilizaimoveis.com/resources/views/template/bottom.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/resources/views/template/bottom.blade.php ENDPATH**/ ?>

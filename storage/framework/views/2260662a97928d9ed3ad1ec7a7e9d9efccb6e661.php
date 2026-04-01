@@ -811,4 +811,4 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-<?php echo $__env->first(['template.bottom'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/coffcoff/Documents/Projects/agilizaimoveis.com/resources/views/imoveis/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->first(['template.bottom'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/resources/views/imoveis/index.blade.php ENDPATH**/ ?>

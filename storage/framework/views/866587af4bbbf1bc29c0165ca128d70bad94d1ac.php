@@ -1,1 +1,0 @@
-<img src="/logo-agiliza.png" alt="Agiliza Imoveis" /><?php /**PATH /home/mhash/Documents/Projects/agilizaimoveis.com/resources/views/components/application-logo.blade.php ENDPATH**/ ?>

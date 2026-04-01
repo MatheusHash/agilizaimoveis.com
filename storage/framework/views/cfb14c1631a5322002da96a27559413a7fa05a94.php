@@ -1132,4 +1132,4 @@ unset($__errorArgs, $__bag); ?>
     })();
 </script>
 
-<?php echo $__env->make('template.bottom', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mhash/Documents/Projects/agilizaimoveis.com/resources/views/welcome.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('template.bottom', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/resources/views/welcome.blade.php ENDPATH**/ ?>

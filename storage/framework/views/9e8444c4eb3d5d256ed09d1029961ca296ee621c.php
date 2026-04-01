@@ -18,4 +18,4 @@
 
 <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1">
 
-<meta name="mobile-web-app-capable" content="yes"><?php /**PATH /home/mhash/Documents/Projects/agilizaimoveis.com/resources/views/template/metatags.blade.php ENDPATH**/ ?>
+<meta name="mobile-web-app-capable" content="yes"><?php /**PATH /var/www/resources/views/template/metatags.blade.php ENDPATH**/ ?>
